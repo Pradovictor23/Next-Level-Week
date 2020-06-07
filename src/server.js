@@ -1,51 +1,30 @@
 const express =  require("express")
 const server = express ()
 
-//pegar o banco de dados
 const db = require("./database/db.js")
 
-//configurar pasta publica através da função static
 server.use(express.static("public"))
 
-//habilitar o uso do req.body na nossa aplicação
 server.use(express.urlencoded({ extended: true }))
 
-/* usando template engine 
--nunjucks é um modulo que foi instalando com o npm
-a pasta é o primeiro parametro
-o servidor é o express
-*/
 const nunjucks = require("nunjucks")
 nunjucks.configure("src/views", {   
     express: server,
     noCache: true
 })
 
-
-
-//configurar caminhos da minha app
-/* pagina inicial 
-req:requisição
-res:resposta
-
-__dirname  : é pra concatenar c o caminho
-*/
-/* pagina inicial é   "/" */
 server.get("/", (req,res) => {
     return res.render("index.html")
 })
 
 
 server.get("/create-point", (req,res) => {
-    //re.query: query strings da nossa url
     console.log(req.query)
 
     return res.render("create-point.html")
 })
 
 server.post("/savepoint", (req, res) => {
-    //req.body: corpo do nosso formulario
-    //consol.log(req.body)
 
     //Inserir dados no banco de dados 
     const query = `
@@ -84,9 +63,6 @@ server.post("/savepoint", (req, res) => {
     db.run(query, values, afterInsertData)
 })
 
-
-/* Sem nuncjuks : res.sendFile(__dirname + "/views/search-results.html"); */
-/* com Nunjucks */
 server.get("/search", (req,res) => {
 
     const search = req.query.search
@@ -113,27 +89,3 @@ server.get("/search", (req,res) => {
 
 //ligar o servidor, porta 3000
 server.listen(3000)
-
-
-
-
-
-
-
-
-
-
-
-/*no git bash(linha de comando) digitar : node src/server, p criar o servidor.. ou ir no package.json e mudar
-onde tem test p start e botar "node src/server.js"
-
-o nodemon é pra n ter q ficar reiniciando o server
-altera no package.json pra nodemon src/server
-
-
-
-npm install nunjucks
-npm start
-
-lembrar de instalar o template do nunjucks nas extensões
-*/
