@@ -23,7 +23,7 @@ body::after{
 #page-search-results header{
     margin-top: 48px;
     display: flex;
-    justify-content: space-between;/*joga cada elemt pra um lado oposto*/
+    justify-content: space-between;
     align-items: center;
 }
 
