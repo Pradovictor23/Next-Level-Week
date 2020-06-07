@@ -1,0 +1,109 @@
+#page-home{
+    /*A medida vh é igual a 1/100 da altura da viewport. Então, se a altura do navegador 
+    é 900px, 1vh equivale a 9px e, se a largura da viewport é 750px, 1vw equivale a 7.5px.*/
+    height: 100vh; 
+    background: url('../icones/home-background.svg') no-repeat;
+    background-position: 35vw 150px;/*to usando o 150px pra alterar o tamanho da imagem, pq a resolução da minha tela é diferente da dele*/
+
+
+}
+
+#page-home .content{
+    width: 90%;
+    max-width: 1100px;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#page-home header{
+    margin-top: 48px;
+    display: flex; /* Faz os elementos ficarem lado a lado*/
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#page-home header a{
+    display: flex;
+    color: var(--cor-tit);
+    font-weight: 700;
+}
+
+#page-home header a span{
+    margin-right: 16px;
+    display:  flex;
+
+    background-image: url('../icones/log-in.svg');
+    
+    width: 20px;
+    height: 20px;
+}
+    
+#page-home main{
+    max-width: 560px;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#page-home main h1{
+    font-size: 54px;
+}
+
+#page-home main p{
+    font-size: 24px;
+    line-height: 38px;
+    margin-top: 24px;
+}
+
+#page-home main a{
+    width: 100%;
+    max-width: 360px;
+    height: 72px;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+
+    margin-top: 40px;
+
+    background-color: var(--cor-but);
+
+    transition: 400ms;
+}
+
+#page-home main a:hover{
+    background-color: #2fb86e;
+}
+
+#page-home main a span{
+    width: 72px;
+    height: 72px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-color: rgba(0,0,0,0.08);
+
+    display: flex;
+    align-items: center; /*Se os itens tiverem com o flex direction= column alinha horiz, e se tiver normal alinha vert*/
+    justify-content: center;
+}
+
+#page-home main a span::after{
+    content: "";
+    background-image: url(/icones/search.svg);
+    width: 20px;
+    height: 20px;
+}
+
+#page-home main a strong{
+    color: white;
+    flex: 1;
+    text-align: center;
+}

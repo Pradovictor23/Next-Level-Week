@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap');
+
+:root{
+    --cor-tit: #322153;
+    --cor-but: #34cb79;
+}
+
+/* o '*'/ Pega todos os elementos*/
+*{
+    margin: 0;
+    padding: 0;
+    /*o padrão da caixa vai ser a partir da borda e não do elemento que ta dentro dela*/
+    box-sizing: border-box;
+}
+
+html{
+    font-family: Roboto, sans-serif;
+}
+
+body{
+    background: #f0f0f5;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: Ubuntu, sans-serif;
+    color: var(--cor-tit);
+}

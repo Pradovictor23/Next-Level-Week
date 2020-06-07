@@ -1,0 +1,51 @@
+@media(max-width:900px){
+    /*Quando a tela tiver menor que 900px...*/
+    #page-home{
+        background-position-x: 70vw; /*colocando a imagem mais à direita, pra n aparecer*/
+    }
+
+    #page-home .content{
+        align-items: center;    /*fazendo tudo ficar centralizado*/
+    }
+
+    #page-home header a{
+        position: absolute;
+        bottom: 48px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #page-home main{
+        align-items: center; /*fazendo a parte do main centralizar*/
+        text-align: center;
+    }
+    
+    #page-search-results .cards{
+        grid-template-columns: 1fr;
+    }
+
+    #page-search-results .cards img{
+        height: 200px;
+    }
+
+    #page-create-point .field-group{
+        flex-direction: column;
+    }
+    
+    #page-create-point .field-group .field + .field{
+        margin-left: 0;
+    }
+}
+
+@media(min-width: 1700px){
+    #page-home{
+        background-position-x: 40vw;
+    }
+}
+
+/* A imagem ja ta fixa no eixo y, ent não precisa disso
+@media(max-width: 760px){
+    #page-home{
+        background-position-y: 200px;
+    }
+} */
