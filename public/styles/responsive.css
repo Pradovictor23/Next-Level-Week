@@ -5,7 +5,7 @@
     }
 
     #page-home .content{
-        align-items: center;    /*fazendo tudo ficar centralizado*/
+        align-items: center;    
     }
 
     #page-home header a{
@@ -16,7 +16,7 @@
     }
     
     #page-home main{
-        align-items: center; /*fazendo a parte do main centralizar*/
+        align-items: center; 
         text-align: center;
     }
     
